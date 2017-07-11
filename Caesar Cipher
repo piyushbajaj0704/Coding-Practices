@@ -1,0 +1,36 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int n,i,temp; 
+    scanf("%d\n",&n);
+    char* s = (char *)malloc(10240 * sizeof(char));
+    scanf("%s\n",s);
+    int k; 
+    scanf("%d",&k);
+    if(k>25) k=k%26;
+    for(i=0;i<n;i++) {
+        temp=s[i];
+        if(temp >=65 && temp <=90) {
+            if((temp+k)>90) {
+                s[i]=((temp+k)%90)+64;
+            }
+            else s[i]=temp+k;
+        } 
+        else if(temp >=97 && temp<=122) {
+            if((temp+k)>122) {
+                s[i]=((temp+k)%122)+96;
+            }
+            else s[i]=temp+k;
+        }
+    }
+    for(i=0;i<n;i++) {
+        printf("%c",s[i]);
+    }
+    return 0;
+}
