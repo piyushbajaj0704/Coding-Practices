@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    char *s=(char*)malloc(sizeof(char)*10000);
+    fgets(s,10000,stdin);  
+    int str=strlen(s),arr[26]={0};
+    for(int i=0;i<str;i++) {
+        if(s[i]!=' ') {
+            if(s[i]>=65 && s[i]<=90){
+                s[i]=s[i]+32;
+            }
+            int x=(int) s[i];
+            arr[x-97]=1;
+        }
+    }
+    for(int i=0;i<26;i++) {
+        if(arr[i]==0) {
+            printf("not pangram");
+            exit(0);
+        }
+    }
+    printf("pangram");
+    return 0;
+}
