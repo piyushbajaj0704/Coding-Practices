@@ -1,0 +1,24 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+char* funnyString(char* s){
+    // Complete this function
+}
+
+int main() {
+    int q; 
+    scanf("%i", &q);
+    for(int a0 = 0; a0 < q; a0++){
+        char* s = (char *)malloc(512000 * sizeof(char));
+        scanf("%s", s);
+        int result_size;
+        char* result = funnyString(s);
+        printf("%s\n", result);
+    }
+    return 0;
+}
