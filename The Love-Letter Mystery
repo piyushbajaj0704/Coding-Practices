@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int t;
+    scanf("%d",&t);
+    char* s=(char*) malloc(sizeof(char)*10000);
+    for(int i=0;i<t;i++) {
+        scanf("%s",s);
+        int slen=strlen(s); 
+        int temp,diff;
+        if(slen%2==0) {
+            temp=(slen/2);
+            diff=-1;
+        }
+        else {
+            temp=(slen/2)+1;
+            diff=0;
+        }
+        int count=0;
+        for(int j=0;j<(slen/2);j++) {
+            diff+=2;
+            if(s[temp]<s[temp-diff]) {
+                count+=(int)(s[temp-diff]-s[temp]);
+            }
+            else if(s[temp]>s[temp-diff]) {
+                count+=(int)(s[temp]-s[temp-diff]);
+            }
+            temp++;
+        }
+        printf("%d\n",count);
+    }
+    return 0;
+}
