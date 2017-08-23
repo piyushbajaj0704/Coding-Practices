@@ -1,0 +1,19 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    long n,c; 
+    scanf("%ld",&n);
+    while(n){
+         c += n%2?0:1;
+         n/=2; 
+    }
+    c=pow(2,c);
+    printf("%ld",c);
+    return 0;
+}
