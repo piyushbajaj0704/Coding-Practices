@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int t,n;
+    scanf("%d\n",&t);
+    for(int i=0;i<t;i++) {
+        int n;
+        scanf("%d",&n);
+        int a[n],sum_l=0,sum_r=0,mid,flag;
+        for(int j=0;j<n;j++) {
+            scanf("%d ",&a[j]);
+            sum_r+=a[j];
+        }
+        a[-1]=0;
+        for(int j=0;j<n;j++) {
+            sum_l+=a[j-1];
+            sum_r-=a[j];
+            if(sum_l==sum_r) {
+            printf("YES\n");
+            flag=1;
+            break;
+             }
+            else flag=0;
+        }
+        if(flag!=1) {
+                printf("NO\n");
+            }
+    } 
+    return 0;
+}
